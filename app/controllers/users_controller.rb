@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+  before_action :require_login, only: [:edit, :update]
+  
+  def require_login
+    unless logged_in?
+      flash[:error] = "You must be logged in to access this section."
+      redirect_to login_path
+    end
+  end
   
   def show
     @user = User.find(params[:id])
@@ -18,9 +26,24 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:success] = "Edit your profile."
+      redirect_to root_path
+    else
+      render 'edit'
+    end
+  end
+  
+  
   private
   
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :age, :location, :password, :password_confirmation)
   end
 end
