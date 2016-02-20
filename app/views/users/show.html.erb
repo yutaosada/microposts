@@ -3,30 +3,17 @@
     <%= gravatar_for @user %>
     <%= @user.name %>
   </h1>
-    <p class="text-left" style="font-weight:bold">
-      Name: <%= @user.name %>
-    </p>
-    <p class="text-left" style="font-weight:bold">
-      Email: <%= @user.email %>
-    </p>
-    <p class="text-left" style="font-weight:bold">
-      Age: <%= @user.age %>
-    </p>
-    <p class="text-left" style="font-weight:bold">
-      Location: <%= @user.location %>
-    </p>
-</div>
-
-<div class="panel panel-primary">
-	<div class="panel-heading">
-		Profile
-	</div>
-	<div class="panel-body">
-	<ul class="list-group">
-		<li class="list-group-item" style="font-weight:bold">Name: <%= @user.name %></li>
-		<li class="list-group-item style="font-weight:bold"">Email: <%= @user.email %></li>
-		<li class="list-group-item">Age: <%= @user.age %></li>
-		<li class="list-group-item">Age: Location: <%= @user.location %></li>
-	</ul>
-	</div>
+  <div class="panel panel-primary">
+	  <div class="panel-heading">
+		  Profile
+	  </div>
+	  <div class="panel-body">
+	    <ul class="list-group">
+		    <li class="list-group-item" style="font-weight:bold">Name: <%= @user.name %></li>
+		    <li class="list-group-item" style="font-weight:bold">Email: <%= @user.email %></li>
+		    <li class="list-group-item" style="font-weight:bold">Age: <%= @user.age %></li>
+		    <li class="list-group-item" style="font-weight:bold">Location: <%= @user.location %></li>
+	    </ul>
+	  </div>
+  </div>
 </div>
